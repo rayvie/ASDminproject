@@ -311,9 +311,75 @@ include('db.php');
 				<div class="clearfix"> </div>
 </section>
 <!-- //gallery -->
+<!-- rooms & rates -->
+      <div class="plans-section" id="rooms">
+				 <div class="container">
+				 <h3 class="title-w3-agileits title-black-wthree">Rooms And Rates</h3>
+						<div class="priceing-table-main">
+				 <div class="col-md-3 price-grid">
+					<div class="price-block agile">
+						<div class="price-gd-top">
+						<img src="images/z1.jpg" alt=" " class="img-responsive" />
+							<h4>Deluxe Room</h4>
+						</div>
+						<div class="price-gd-bottom">
+							<div class="price-selet">	
+								<h3><span>$</span>200</h3>						
+								<a href="admin/reservation.php" >Book Now</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 price-grid ">
+					<div class="price-block agile">
+						<div class="price-gd-top">
+						<img src="images/r2.jpg" alt=" " class="img-responsive" />
+							<h4>Luxury Room</h4>
+						</div>
+						<div class="price-gd-bottom">
+							<div class="price-selet">
+								<h3><span>$</span>120</h3>
+								<a href="admin/reservation.php" >Book Now</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 price-grid lost">
+					<div class="price-block agile">
+						<div class="price-gd-top">
+						<img src="images/r3.jpg" alt=" " class="img-responsive" />
+							<h4>Guest House</h4>
+						</div>
+						<div class="price-gd-bottom">
+							<div class="price-selet">
+								<h3><span>$</span>70</h3>
+								<a href="admin/reservation.php" >Book Now</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 price-grid wthree lost">
+					<div class="price-block agile">
+						<div class="price-gd-top ">
+							<img src="images/r4.jpg" alt=" " class="img-responsive" />
+							<h4>Single Room</h4>
+						</div>
+						<div class="price-gd-bottom">
+							<div class="price-selet">
+								<h3><span>$</span> 30</h3>
+								<a href="admin/reservation.php" >Book Now</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+	 <!--// rooms & rates -->
 <!--/footer -->
     <div class="copy">
-		        <p>© 2017 HOTEL HOTEL . All Rights Reserved | Design by <a href="index.php">HOTELHOTEL</a> </p>
+		        <center><p>© 2017 HOTEL HOTEL . All Rights Reserved | Design by <a href="index.php">HOTELHOTEL</a> </p></center>
 		    </div>
 <!-- js -->
 <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
