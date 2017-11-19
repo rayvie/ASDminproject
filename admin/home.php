@@ -12,15 +12,10 @@ if(!isset($_SESSION["user"]))
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Administrator	</title>
-    <!-- Bootstrap Styles-->
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
-    <!-- FontAwesome Styles-->
     <link href="assets/css/font-awesome.css" rel="stylesheet" />
-    <!-- Morris Chart Styles-->
     <link href="assets/js/morris/morris-0.4.3.min.css" rel="stylesheet" />
-    <!-- Custom Styles-->
     <link href="assets/css/custom-styles.css" rel="stylesheet" />
-    <!-- Google Fonts-->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
 </head>
 
@@ -28,12 +23,6 @@ if(!isset($_SESSION["user"]))
     <div id="wrapper">
         <nav class="navbar navbar-default top-navbar" role="navigation">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
                 <a class="navbar-brand" href="home.php"> <?php echo $_SESSION["user"]; ?> </a>
             </div>
 
@@ -45,16 +34,16 @@ if(!isset($_SESSION["user"]))
                     <ul class="dropdown-menu dropdown-user">
                         <li><a href="usersetting.php"><i class="fa fa-user fa-fw"></i> User Profile</a>
                         </li>
+                        <li><a href="settings.php"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                        </li>
                         <li class="divider"></li>
                         <li><a href="logout.php"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                         </li>
                     </ul>
-                    <!-- /.dropdown-user -->
                 </li>
-                <!-- /.dropdown -->
             </ul>
         </nav>
-        <!--/. NAV TOP  -->
+
         <nav class="navbar-default navbar-side" role="navigation">
             <div class="sidebar-collapse">
                 <ul class="nav" id="main-menu">
@@ -77,9 +66,10 @@ if(!isset($_SESSION["user"]))
             </div>
 
         </nav>
-        <!-- /. NAV SIDE  -->
         <div id="page-wrapper">
             <div id="page-inner">
+
+
                 <div class="row">
                     <div class="col-md-12">
                         <h1 class="page-header">
@@ -87,7 +77,6 @@ if(!isset($_SESSION["user"]))
                         </h1>
                     </div>
                 </div>
-                <!-- /. ROW  -->
 				<?php
 						include ('db.php');
 						$sql = "select * from roombook";
@@ -101,128 +90,155 @@ if(!isset($_SESSION["user"]))
 								if($new=="Not Confirm")
 								{
 									$c = $c + 1;
+									
+								
 								}
-						}	
-				?>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                
+						}
+                    ?>
+
+					<div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            
+                        </div>
+                        <div class="panel-body">
+                            <div class="panel-group" id="accordion">
+							
+							<div class="panel panel-success">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+												 New Room Bookings  <span class="badge"><?php echo $c ; ?></span>
+											
+                                        </h4>
+                                    </div>
+                                        <div class="panel-body">
+                                           <div class="panel panel-default">
+                        
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Name</th>
+                                            <th>Email</th>
+                                            <th>Country</th>
+											<th>Room</th>
+											<th>Bedding</th>
+											<th>Meal</th>
+											<th>Check In</th>
+											<th>Check Out</th>
+											<th>Status</th>
+											<th>More</th>
+											
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        
+									<?php
+									$tsql = "select * from roombook";
+									$tre = mysqli_query($con,$tsql);
+									while($trow=mysqli_fetch_array($tre) )
+									{	
+										$co =$trow['stat']; 
+										if($co=="Not Confirm")
+										{
+											echo"<tr>
+												<th>".$trow['id']."</th>
+												<th>".$trow['FName']." ".$trow['LName']."</th>
+												<th>".$trow['Email']."</th>
+												<th>".$trow['Country']."</th>
+												<th>".$trow['TRoom']."</th>
+												<th>".$trow['Bed']."</th>
+												<th>".$trow['Meal']."</th>
+												<th>".$trow['cin']."</th>
+												<th>".$trow['cout']."</th>
+												<th>".$trow['stat']."</th>
+												
+												<th><a href='roombook.php?rid=".$trow['id']." ' class='btn btn-primary'>Action</a></th>
+												</tr>";
+										}	
+									
+									}
+									?>
+                                        
+                                    </tbody>
+                                </table>
+								
                             </div>
-                            <div class="panel-body">
-                                <div class="panel-group" id="accordion">
-        							<div class="panel panel-primary">
-                                        <div class="panel-heading">
-                                            <h4 class="panel-title">
-                                                <h3>
-        											 New Room Bookings  <span class="badge"><?php echo $c ; ?></span>
-                                                </h3>
-                                            </h4>
+                        </div>
+                    </div>
                                         </div>
-                                            <div class="panel-body">
-                                               <div class="panel panel-default">
-                                                    <div class="panel-body">
-                                                        <div class="table-responsive">
-                                                            <table class="table">
-                                                                <thead>
-                                                                    <tr>
-                                                                        <th>#</th>
-                                                                        <th>Name</th>
-                                                                        <th>Email</th>
-                                                                        <th>Country</th>
-                            											<th>Room</th>
-                            											<th>Bedding</th>
-                            											<th>Meal</th>
-                            											<th>Check In</th>
-                            											<th>Check Out</th>
-                            											<th>Status</th>
-                            											<th>More</th>
-                            											
-                                                                    </tr>
-                                                                </thead>
-                                                                <tbody>
-                                									<?php
-                                    									$tsql = "select * from roombook";
-                                    									$tre = mysqli_query($con,$tsql);
-                                    									while($trow=mysqli_fetch_array($tre) )
-                                    									{	
-                                    										$co =$trow['stat']; 
-                                    										if($co=="Not Confirm")
-                                    										{
-                                    											echo"<tr>
-                                    												<th>".$trow['id']."</th>
-                                    												<th>".$trow['FName']." ".$trow['LName']."</th>
-                                    												<th>".$trow['Email']."</th>
-                                    												<th>".$trow['Country']."</th>
-                                    												<th>".$trow['TRoom']."</th>
-                                    												<th>".$trow['Meal']."</th>
-                                    												<th>".$trow['cin']."</th>
-                                    												<th>".$trow['cout']."</th>
-                                    												<th>".$trow['stat']."</th>
-                                    												
-                                    												<th><a href='roombook.php?rid=".$trow['id']." ' class='btn btn-primary'>Action</a></th>
-                                    												</tr>";
-                                    										}
-                                    									}
-                                									?>
-                                                                </tbody>
-                                                            </table>
-        								                </div>
-                                                    </div>
-                                                </div> 
-                                            </div>
+                                </div>
+								<?php
+								
+								$rsql = "SELECT * FROM `roombook`";
+								$rre = mysqli_query($con,$rsql);
+								$r =0;
+								while($row=mysqli_fetch_array($rre) )
+								{		
+										$br = $row['stat'];
+										if($br=="Confirm")
+										{
+											$r = $r + 1;
+											
+											
+											
+										}
+										
+								
+								}
+						
+								?>
+                                <div class="panel panel-warning">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+												 Booked Rooms  <span class="badge"><?php echo $r ; ?></span>
+
+                                        </h4>
                                     </div>
-        							<?php
-        								$rsql = "SELECT * FROM `roombook`";
-        								$rre = mysqli_query($con,$rsql);
-        								$r =0;
-        								while($row=mysqli_fetch_array($rre) )
-        								{		
-        										$br = $row['stat'];
-        										if($br=="Confirm")
-        										{
-        											$r = $r + 1;	
-        										}
-        								}
-        							?>
-                                    <div class="panel panel-primary">
-                                        <div class="panel-heading">
-                                            <h4 class="panel-title">
-                                                <h3>
-        											 Booked Rooms  <span class="badge"><?php echo $r ; ?></span>
-        										</h3>
-                                            </h4>
-                                        </div>
-                                            <div class="panel-body">
-            									<?php
-                									$msql = "SELECT * FROM `roombook`";
-                									$mre = mysqli_query($con,$msql);
-                									
-                									while($mrow=mysqli_fetch_array($mre) )
-                									{		
-                										$br = $mrow['stat'];
-                										if($br=="Confirm")
-                										{
-                											$fid = $mrow['id'];
-                											 
-                										echo"<div class='col-md-2 col-sm-8 col-xs-8'>
-                												<div class='panel panel-primary text-center no-boder bg-color-blue'>
-                													<div class='panel-body'>
-                														<h3>".$mrow['FName']."</h3>
-                													</div>
-                													<div class='panel-footer back-footer-blue'>
-                													<a href=show.php?sid=".$fid ."><button  class='btn btn-primary btn' data-toggle='modal' data-target='#myModal'>
-                												Show
-                												</button></a>
-                													</div>
-                												</div>	
-                										</div>";	
-                										}
-                									}
-            									?>  
-        									</div>
-                                    </div>
+                                    
+                                        <div class="panel-body">
+										<?php
+										$msql = "SELECT * FROM `roombook`";
+										$mre = mysqli_query($con,$msql);
+										
+										while($mrow=mysqli_fetch_array($mre) )
+										{		
+											$br = $mrow['stat'];
+											if($br=="Confirm")
+											{
+												$fid = $mrow['id'];
+												 
+											echo"<div class='col-md-3 col-sm-12 col-xs-12'>
+													<div class='panel panel-primary text-center no-boder bg-color-green'>
+														<div class='panel-body'>
+															<i class='fa fa-users fa-5x'></i>
+															<h3>".$mrow['FName']."</h3>
+														</div>
+														<div class='panel-footer back-footer-green'>
+														<a href=show.php?sid=".$fid ."><button  class='btn btn-success btn' data-toggle='modal' data-target='#myModal'>
+													Show
+													</button></a>
+															".$mrow['TRoom']."
+														</div>
+													</div>	
+											</div>";
+															
+												
+					
+				
+												
+											}
+											
+									
+										}
+										?>
+                                           
+										</div>
+									
+                                </div>
 
                                 </div>
                             </div>
@@ -230,18 +246,16 @@ if(!isset($_SESSION["user"]))
                     </div>
                 </div>
             </div>
+				
+            </div>
         </div>
     </div>
 
     <script src="assets/js/jquery-1.10.2.js"></script>
-    
     <script src="assets/js/bootstrap.min.js"></script>
-    
     <script src="assets/js/jquery.metisMenu.js"></script>
-
     <script src="assets/js/morris/raphael-2.1.0.min.js"></script>
     <script src="assets/js/morris/morris.js"></script>
-    
     <script src="assets/js/custom-scripts.js"></script>
 
 

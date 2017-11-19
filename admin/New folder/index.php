@@ -15,8 +15,15 @@
   
      
       <link rel="stylesheet" href="css/style.css">
-<div class="bottom">  <h3><a href="../index.php">ADMIN</a></h3></div>
 
+  
+</head>
+
+<body>
+
+
+ <div class="bottom">  <h3><a href="../index.php">ADMIN</a></h3></div>
+ 
  <div class="container">
 
 
@@ -26,9 +33,8 @@
 
           <fieldset class="clearfix">
 
-            <p><span class="fontawesome-user"></span><input type="text"  name="user" value="Username" onBlur="if(this.value == '') this.value = 'Username'" onFocus="if(this.value == 'Username') this.value = ''" required></p> 
-
-            <p><span class="fontawesome-lock"></span><input type="password" name="pass"  value="Password" onBlur="if(this.value == '') this.value = 'Password'" onFocus="if(this.value == 'Password') this.value = ''" required></p> 
+            <p><span class="fontawesome-user"></span><input type="text"  name="user" value="Username" onBlur="if(this.value == '') this.value = 'Username'" onFocus="if(this.value == 'Username') this.value = ''" required></p> <!-- JS because of IE support; better: placeholder="Username" -->
+            <p><span class="fontawesome-user"></span><input type="password" name="pass"  value="Password" onBlur="if(this.value == '') this.value = 'Password'" onFocus="if(this.value == 'Password') this.value = ''" required></p> <!-- JS because of IE support; better: placeholder="Password" -->
             <p><input type="submit" name="sub"  value="Login"></p>
 
           </fieldset>
@@ -37,13 +43,10 @@
 
        
 
-      </div> 
-  <center>
-    <h1>
-      <a href="../index.php">Visit Homepage</a>
-    </h1>
-  </center>
+      </div> <!-- end login -->
+
     </div>
+    
   
   
 </body>
@@ -54,6 +57,7 @@
   
    
    if($_SERVER["REQUEST_METHOD"] == "POST") {
+      // username and password sent from form 
       
       $myusername = mysqli_real_escape_string($con,$_POST['user']);
       $mypassword = mysqli_real_escape_string($con,$_POST['pass']); 
@@ -65,6 +69,8 @@
       
       $count = mysqli_num_rows($result);
       
+      // If result matched $myusername and $mypassword, table row must be 1 row
+		
       if($count == 1) {
          
          $_SESSION['user'] = $myusername;

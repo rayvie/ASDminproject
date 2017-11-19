@@ -14,7 +14,7 @@ body {
 
  #wrapper {
     width: 100%;
-    background:#01796F;
+    background:#09192A;
 	
 }
 
@@ -114,7 +114,7 @@ border-radius: 50px;
 }
     .bg-color-green {
 background-color: #fff;
-color: #5cb85c;
+color: #90EE90;
 }
  .bg-color-blue {
 background-color: #fff;
@@ -129,7 +129,7 @@ background-color: #fff;
 color:#f0ad4e;
 }
 .back-footer-green {
-background-color: #5cb85c;
+background-color: #90EE90;
 color:#fff;
 border-top: 0px solid #fff;
 }
@@ -350,7 +350,7 @@ background: #172D44;
 	
 }
 .top-navbar {
-	background:#01796F;
+	background:#09192A;
 	border-bottom:none;
 	
 }
@@ -369,7 +369,7 @@ border:0px solid black;
      
 }
 .navbar-header {
-    background: #01796F;
+    background: #09192A;
 }
 .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
 background-color: #B40101;
