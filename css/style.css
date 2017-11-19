@@ -807,172 +807,7 @@ p.logo_w3l_agile_caption {
 	border:2px solid #999;
 }
 /*-- grid-effect --*/
-/* General grid styles */
-.cbp-ig-grid {
-	list-style: none;
-	padding:0;
-	margin: 0;
-}
 
-/* Clear floats */
-.cbp-ig-grid:before, 
-.cbp-ig-grid:after { 
-	content: " "; 
-	display: table; 
-}
-
-.cbp-ig-grid:after { 
-	clear: both; 
-}
-
-/* grid item */
-.cbp-ig-grid li {
-	width: 25%;
-    float: left;
-    text-align: center;
-    border-left: 1px solid #cfdbf3;
-}
-
-.cbp-ig-grid li:last-child{
-	border-right: 1px solid #cfdbf3;
-}
-
-.w3_grid_effect {
-    padding: 2em;
-    background: rgba(52, 74, 113, 0.09);
-}
-
-/* anchor style */
-.cbp-ig-grid li > a {
-	display: block;
-	height: 100%;
-	color: #47a3da;
-	-webkit-transition: background 0.2s;
-	-moz-transition: background 0.2s;
-	transition: background 0.2s;
-}
-
-/* the icon with pseudo class for icon font */
-.cbp-ig-icon {
-	padding: 1.5em 0 0;
-	display: block;
-	-webkit-transition: -webkit-transform 0.2s;
-	transition: -moz-transform 0.2s;
-	transition: transform 0.2s;
-}
-
-.cbp-ig-icon:before {
-	font-family:FontAwesome;
-	font-size: 5em;
-	speak: none;
-	color: #0f2453;
-	font-style: normal;
-	font-weight: normal;
-	font-variant: normal;
-	text-transform: none;
-	line-height: 1;
-	-webkit-font-smoothing: antialiased;
-}
-
-
-/* title element */
-.cbp-ig-grid .cbp-ig-title {
-	margin: 20px 0 10px 0;
-    padding: 20px 0 0 0;
-    font-size: 1em;
-    position: relative;
-    -webkit-transition: -webkit-transform 0.2s;
-    -moz-transition: -moz-transform 0.2s;
-    transition: transform 0.2s;
-    text-transform: uppercase;
-    letter-spacing: 4px;
-	color:#212121;
-}
-
-.cbp-ig-grid .cbp-ig-title:before {
-	content: '';
-	position: absolute;
-	background:#ffce14;
-	width: 160px;
-	height: 6px;
-	top: 0px;
-	left: 50%;
-	margin: -10px 0 0 -80px;
-	-webkit-transition: margin-top 0.2s;
-	-moz-transition: margin-top 0.2s;
-	transition: margin-top 0.2s;
-}
-
-.cbp-ig-grid .cbp-ig-category {
-	text-transform: uppercase;
-	display: inline-block;
-	font-size: 1em;
-	letter-spacing: 1px;
-	color: #ffce14;
-	-webkit-transform: translateY(10px);
-	-moz-transform: -moz-translateY(10px);
-	-ms-transform: -ms-translateY(10px);
-	transform: translateY(10px);
-	opacity: 0;
-	-webkit-transition: -webkit-transform 0.3s, opacity 0.2s;
-	-moz-transition: -moz-transform 0.3s, opacity 0.2s;
-	-webkit-transition: transform 0.3s, opacity 0.2s;
-}
-
-.cbp-ig-grid li:hover .cbp-ig-category,
-.touch .cbp-ig-grid li .cbp-ig-category {
-	opacity: 1;
-	-webkit-transform: translateY(0px);
-	-moz-transform: translateY(0px);
-	-ms-transform: translateY(0px);
-	transform: translateY(0px);
-}
-
-/* Hover styles */
-
-.cbp-ig-grid li > .w3_grid_effect:hover {
-    background: #0f2453;
-}
-
-.cbp-ig-grid li > .w3_grid_effect:hover .cbp-ig-icon {
-	-webkit-transform: translateY(-20px);
-	-moz-transform: translateY(-20px);
-	-ms-transform: translateY(-20px);
-	transform: translateY(-20px);
-}
-
-.cbp-ig-grid li > .w3_grid_effect:hover .cbp-ig-icon:before
- {
-	color: #ffce14;
-}
-.cbp-ig-grid li > .w3_grid_effect:hover .cbp-ig-title{
-	color:#fff;
-}
-
-.cbp-ig-grid li > .w3_grid_effect:hover .cbp-ig-title {
-	-webkit-transform: translateY(-45px);
-	-moz-transform: translateY(-45px);
-	-ms-transform: translateY(-45px);
-	transform: translateY(-45px);
-}
-
-.cbp-ig-grid li > .w3_grid_effect:hover .cbp-ig-title:before {
-	background: #fff;
-	margin-top: 68px;
-}
-
-
-@media screen and (max-width: 62.75em) {
-	.cbp-ig-grid li {
-		width: 50%;
-	}
-}
-
-@media screen and (max-width: 25em) { 
-	.cbp-ig-grid {
-		font-size: 80%;
-	}
-}
 /*-- //banner-bottom --*/
 /*--main--*/
 .contact-w3ls,.advantages,.banner-bottom ,.w3l-visitors-agile,.plans-section,.team{
@@ -1182,6 +1017,81 @@ text-align:center;
 	filter: alpha(opacity=0);
 }
 /*-- //to-top --*/
+
+
+/*--rooms & rates --*/
+.price-list ul {
+    padding: 0px;
+    list-style: none;
+}
+.price-gd-top {
+    text-align: center;
+    position: relative;
+}
+.price-gd-top h4 {
+    font-size: 1.5em;
+    color: #fff;
+    padding: 0.4em 1em;
+    background: #0f2453;
+    font-weight: 300;
+    position: absolute;
+    top: 9.6em;
+    right: 0em;
+}
+.price-selet h3 {
+    padding: 0.2em 0em 0em 0em;
+    font-size: 1.7em;
+    float: left;
+    margin-left: 20px;
+}
+.price-selet h3 span {
+    color: #ef0404;
+    font-size: 31px;
+    margin-right: 5px;
+}
+.price-gd-bottom {
+    background: #fff;
+    text-align: center;
+    padding: 1.8em 0em 1em;
+}
+.price-gd-top img {
+    width: 100%;
+}
+.price-list ul li {
+    padding: 0.5em 0em;
+    font-size: 0.9em;
+    color: #2b2b2b;
+    display: inline-block;
+}
+.price-selet {
+    padding: 1em 0em;
+    text-align: center;
+    background: #fff;
+}
+.price-selet a {
+    font-size: 1.1em;
+    color: #fff;
+    display: block;
+}
+.price-selet a {
+    font-size: 0.9em;
+    color: #000000;
+    display: inline-block;
+    padding: 0.5em 2em;
+    background: #ffce14;
+    text-decoration: none;
+    border: 2px solid #ecbf11;
+}
+.price-block {
+    box-shadow: 0px 0px 2px 1px rgba(0,0,0,0.15);
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -o-transition: 0.5s all;
+}
+/*--//rooms & rates --*/
+
+
 /*--responsive--*/
 @media(max-width:1600px){
 	.callbacks_tabs {
