@@ -22,29 +22,17 @@ include('db.php');
 </head>
 <body>
 <!-- header -->
+
 <div class="w3_navigation">
 	<div class="container">
 		<nav class="navbar navbar-default">
-			<div class="navbar-header navbar-left">
-				
-				<h1><a class="navbar-brand" href="index.php">HOTEL<span>HOTEL</span><p class="logo_w3l_agile_caption">Welcome in our Resort</p></a></h1>
-			</div>
-			<div class="navbar-right" id="navbar-1">
-				<nav class="menu ">
-					<ul class="nav navbar-nav menu__list">
-						<li class="menu__item"><a href="index.php" class="menu__link">Home</a></li>
-						<li class="menu__item"><a href="#about" class="menu__link scroll">About</a></li>
-						<li class="menu__item"><a href="#gallery" class="menu__link scroll">Rooms</a></li>
-					</ul>
-				</nav>
-			</div>
+                   
 		</nav>
 
 	</div>
 </div>
 <!-- //header -->
-		<!-- banner -->
-	<div id="home" class="w3ls-banner">
+<div id="home" class="w3ls-banner">
 		<!-- banner-text -->
 		<div class="slider">
 			<div class="callbacks_container">
@@ -57,12 +45,14 @@ include('db.php');
 								<h4>HOTEL HOTEL</h4>
 									<h3>We know what you love</h3>
 										<p>Welcome to our hotels</p>
-									<div class="agileits_w3layouts_more menu__item">
-				<a href="#" class="menu__link" data-toggle="modal" data-target="#myModal">Learn More</a>
-			</div>
-								</div>	
+								</div>
+                                    <center>
+                                        <span><a href="#about" class="btn btn-warning scroll"><h3>About</h3></a></span>
+                                        <span><a href="#gallery" class="btn btn-warning scroll"><h3>Rooms</h3></a></span>
+                                     </center>
 							</div>
 						</div>
+     
 					</li>
 					<li>
 						<div class="w3layouts-banner-top w3layouts-banner-top1">
@@ -71,10 +61,11 @@ include('db.php');
 								<h4>HOTEL HOTEL</h4>
 									<h3>Stay with friends & families</h3>
 										<p>Come & enjoy precious moment with us</p>
-									<div class="agileits_w3layouts_more menu__item">
-				<a href="#" class="menu__link" data-toggle="modal" data-target="#myModal">Learn More</a>
-			</div>
-								</div>	
+								</div>
+                                    <center>
+                                        <span><a href="#about" class="btn btn-warning scroll"><h3>About</h3></a></span>
+                                        <span><a href="#gallery" class="btn btn-warning scroll"><h3>Rooms</h3></a></span>
+                                     </center>
 							</div>
 						</div>
 					</li>
@@ -85,10 +76,11 @@ include('db.php');
 								<h4>HOTEL HOTEL</h4>
 								<h3>want luxurious vacation?</h3>
 										<p>Get an accommodation today</p>
-									<div class="agileits_w3layouts_more menu__item">
-											<a href="#" class="menu__link" data-toggle="modal" data-target="#myModal">Learn More</a>
-										</div>
 								</div>
+                                    <center>
+                                        <span><a href="#about" class="btn btn-warning scroll"><h3>About</h3></a></span>
+                                        <span><a href="#gallery" class="btn btn-warning scroll"><h3>Rooms</h3></a></span>
+                                     </center>
 							</div>
 						</div>
 					</li>
@@ -97,46 +89,13 @@ include('db.php');
 			<div class="clearfix"> </div>
 			<!--banner Slider starts Here-->
 		</div>
-		    <!--<div class="thim-click-to-bottom">
-				<a href="#about" class="scroll">
-					<i class="fa fa-long-arrow-down" aria-hidden="true"></i>
-				</a>
-			</div>-->
-	</div>	s
-	<!-- //banner --> 
-<!--//Header-->
-<!-- //Modal1 -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog">
-						<!-- Modal1 -->
-							<div class="modal-dialog">
-							<!-- Modal content-->
-								<div class="modal-content">
-									<div class="modal-header">
-										<button type="button" class="close" data-dismiss="modal">&times;</button>
-										<h4>HOTEL <span>HOTEL</span></h4>
-										<img src="images/1.jpg" alt=" " class="img-responsive">
-										<h5>We know what you love</h5>
-										<p>Providing guests unique and enchanting views from their rooms with its exceptional amenities, makes Star Hotel one of bests in its kind.Try our food menu, awesome services and friendly staff while you are here.</p>
-									</div>
-								</div>
-							</div>
-						</div>
-<!-- //Modal1 -->
+	</div>
 <div id="availability-agileits">
 <div class="col-md-12 book-form-left-w3layouts">
 	<a href="admin/reservation.php "><h2><span>ROOM RESERVATION</span><br><br>CLICK HERE!</h2></a>
 </div>
 
 			<div class="clearfix"> </div>
-</div>
-    
-    <div class="banner-bottom">
-		<div class="container">	
-			<div class="agileits_banner_bottom">
-				<h3><span>Experience a good stay, enjoy fantastic offers</span> Find our friendly welcoming reception</h3>
-			</div>
-        </div>
-    </div>
 
     <div class="about-wthree" id="about">
 		  <div class="container"> 
@@ -205,7 +164,7 @@ include('db.php');
             <a href="images/s3.jpg" class="swipebox"><img src="images/s3.jpg" class="img-responsive" alt="/" style="float:left; border:5px solid #021a40;">
 				</a>
             <div style="margin-left: 430px; font-size: 18px;">
-                <h3>Lorem ipsum dolor sit amet, consectetur adipiscin</h3><br>
+                <h3>Royalty Service</h3><br>
               <p>Guests staying at the Hotel Hotel have access to a range of facilities that will help to ensure a comfortable and enjoyable stay.<br><br>
 
 • Daily complimentary buffet breakfast<br>
