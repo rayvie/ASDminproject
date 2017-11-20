@@ -92,7 +92,6 @@ ob_start();
                                         <tr>
                                             <th>User ID</th>
 											<th>User name</th>
-                                            <th>Password</th>
                                             
 											<th>Update</th>
 											<th>Remove</th>
@@ -113,7 +112,6 @@ ob_start();
 												echo"<tr class='gradeC'>
 													<td>".$id."</td>
 													<td>".$us."</td>
-													<td>".$ps."</td>
 													
 													<td><button class='btn btn-primary btn' data-toggle='modal' data-target='#myModal'>
 															 Update 
@@ -126,7 +124,6 @@ ob_start();
 												echo"<tr class='gradeU'>
 													<td>".$id."</td>
 													<td>".$us."</td>
-													<td>".$ps."</td>
 													
 													<td><button class='btn btn-primary btn' data-toggle='modal' data-target='#myModal'>
                               Update 

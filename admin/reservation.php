@@ -6,7 +6,7 @@ include('db.php')
 <head>
       <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>RESERVATION SUNRISE HOTEL</title>
+    <title>RESERVATION HOTEL</title>
 
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
     <link href="assets/css/font-awesome.css" rel="stylesheet" />
@@ -78,16 +78,7 @@ include('db.php')
                                             <input name="email" type="email" class="form-control" required>
                                             
                                </div>
-							   <div class="form-group">
-                                            <label>Nationality*</label>
-                                            <label class="radio-inline">
-                                                <input type="radio" name="nation"  value="Sri Lankan" checked="">Pilipino
-                                            </label>
-                                            <label class="radio-inline">
-                                                <input type="radio" name="nation"  value="Non Sri Lankan ">Not Pilipino
-                                            </label>
-                         
-                                </div>
+
 								<?php
 
 								$countries = array(
@@ -207,7 +198,7 @@ include('db.php')
 							$code=$_POST['code']; 
 							if($code1!="$code")
 							{
-							$msg="Invalide code"; 
+							$msg="Invalid code"; 
 							}
 							else
 							{

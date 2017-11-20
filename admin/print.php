@@ -120,20 +120,20 @@ aside h1 { border-color: #999; border-bottom-style: solid; }
 									$type_of_room = 0;       
 									if($troom=="Superior Room")
 									{
-										$type_of_room = 320;
+										$type_of_room = 200;
 									
 									}
 									else if($troom=="Deluxe Room")
 									{
-										$type_of_room = 220;
+										$type_of_room = 120;
 									}
 									else if($troom=="Guest House")
 									{
-										$type_of_room = 180;
+										$type_of_room = 70;
 									}
 									else if($troom=="Single Room")
 									{
-										$type_of_room = 150;
+										$type_of_room = 30;
 									}
 									
 									if($bed=="Single")

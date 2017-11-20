@@ -134,11 +134,6 @@ if(!isset($_SESSION["user"]))
                                             
                                         </tr>
 										<tr>
-                                            <th>Nationality </th>
-                                            <th><?php echo $nat; ?></th>
-                                            
-                                        </tr>
-										<tr>
                                             <th>Country </th>
                                             <th><?php echo $country;  ?></th>
                                             

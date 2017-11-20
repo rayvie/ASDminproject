@@ -79,7 +79,7 @@ if(!isset($_SESSION["user"]))
                 </div>
 				<?php
 						include ('db.php');
-						$sql = "select * from roombook";
+						 $sql = "select * from roombook";
 						$re = mysqli_query($con,$sql);
 						$c =0;
 						while($row=mysqli_fetch_array($re) )
