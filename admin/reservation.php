@@ -198,8 +198,8 @@ include('db.php')
 							$code=$_POST['code']; 
 							if($code1!="$code")
 							{
-							$msg="Invalid code"; 
-							}
+                                echo "<script type='text/javascript'> alert('Invalid Code')</script>";
+                            }
 							else
 							{
 							
@@ -207,6 +207,7 @@ include('db.php')
 									$check="SELECT * FROM roombook WHERE email = '$_POST[email]'";
 									$rs = mysqli_query($con,$check);
 									$data = mysqli_fetch_array($rs, MYSQLI_NUM);
+
 									if($data[0] > 1) {
 										echo "<script type='text/javascript'> alert('User Already in Exists')</script>";
 										
@@ -215,7 +216,7 @@ include('db.php')
 									else
 									{
 										$new ="Not Confirm";
-										$newUser="INSERT INTO `roombook`(`Title`, `FName`, `LName`, `Email`, `National`, `Country`, `Phone`, `TRoom`, `Bed`, `NRoom`, `Meal`, `cin`, `cout`,`stat`,`nodays`) VALUES ('$_POST[title]','$_POST[fname]','$_POST[lname]','$_POST[email]','$_POST[nation]','$_POST[country]','$_POST[phone]','$_POST[troom]','$_POST[bed]','$_POST[nroom]','$_POST[meal]','$_POST[cin]','$_POST[cout]','$new',datediff('$_POST[cout]','$_POST[cin]'))";
+										$newUser="INSERT INTO `roombook`(`Title`, `FName`, `LName`, `Email`, `National`, `Country`, `Phone`, `TRoom`, `Bed`, `NRoom`, `Meal`, `cin`, `cout`,`stat`,`nodays`) VALUES ('$_POST[title]','$_POST[fname]','$_POST[lname]','$_POST[email]','$_POST[country]','$_POST[country]','$_POST[phone]','$_POST[troom]','$_POST[bed]','$_POST[nroom]','$_POST[meal]','$_POST[cin]','$_POST[cout]','$new',datediff('$_POST[cout]','$_POST[cin]'))";
 										if (mysqli_query($con,$newUser))
 										{
 											echo "<script type='text/javascript'> alert('Your Booking application has been sent')</script>";
@@ -232,8 +233,6 @@ include('db.php')
 							}
 							}
 							?>
-						</form>
-							
                     </div>
                 </div>
             </div>
