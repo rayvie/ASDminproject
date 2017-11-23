@@ -1,4 +1,4 @@
-﻿<?php  
+<?php  
 session_start();  
 if(!isset($_SESSION["user"]))
 {
@@ -49,18 +49,22 @@ if(!isset($_SESSION["user"]))
                 <ul class="nav" id="main-menu">
 
                     <li>
-                        <a class="active-menu" href="home.php"><i class="fa fa-dashboard"></i> Status</a>
+                        <a href="home.php"><i class="fa fa-dashboard"></i> Status</a>
                     </li>
                     <li>
-                        <a href="bookedrooms.php"><i class="fa fa-dashboard"></i> Booked Rooms</a>
+                        <a class="active-menu" href="bookedrooms.php"><i class="fa fa-dashboard"></i> Booked Rooms</a>
                     </li>
                     <li>
                         <a href="payment.php"><i class="fa fa-qrcode"></i> Payment</a>
                     </li>
                     <li>
                         <a href="logout.php"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
-                    </li>                    
-                </ul>
+                    </li>
+                   
+
+
+                    
+					</ul>
 
             </div>
 
@@ -72,7 +76,7 @@ if(!isset($_SESSION["user"]))
                 <div class="row">
                     <div class="col-md-12">
                         <h1 class="page-header">
-                            Status <small>Room Booking </small>
+                            Booked <small>Rooms </small>
                         </h1>
                     </div>
                 </div>
@@ -101,72 +105,7 @@ if(!isset($_SESSION["user"]))
                         <div class="">
                             <div class="panel-group">
 							
-							<div class="panel panel-success">
-                                    <div class="panel-heading">
-                                        <h4 class="panel-title">
-												 New Room Bookings  <span class="badge"><?php echo $c ; ?></span>
-											
-                                        </h4>
-                                    </div>
-                                        <div class="panel-body">
-                                           <div class="panel panel-default">
-                        
-                        <div class="panel-body">
-                            <div class="table-responsive">
-                                <table class="table">
-                                    <thead>
-                                        <tr>
-                                            <th>#</th>
-                                            <th>Name</th>
-                                            <th>Email</th>
-                                            <th>Country</th>
-											<th>Room</th>
-											<th>Bedding</th>
-											<th>Meal</th>
-											<th>Check In</th>
-											<th>Check Out</th>
-											<th>Status</th>
-											<th>More</th>
-											
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        
-									<?php
-									$tsql = "select * from roombook";
-									$tre = mysqli_query($con,$tsql);
-									while($trow=mysqli_fetch_array($tre) )
-									{	
-										$co =$trow['stat']; 
-										if($co=="Not Confirm")
-										{
-											echo"<tr>
-												<th>".$trow['id']."</th>
-												<th>".$trow['FName']." ".$trow['LName']."</th>
-												<th>".$trow['Email']."</th>
-												<th>".$trow['Country']."</th>
-												<th>".$trow['TRoom']."</th>
-												<th>".$trow['Bed']."</th>
-												<th>".$trow['Meal']."</th>
-												<th>".$trow['cin']."</th>
-												<th>".$trow['cout']."</th>
-												<th>".$trow['stat']."</th>
-												
-												<th><a href='roombook.php?rid=".$trow['id']." ' class='btn btn-primary'>Action</a></th>
-												</tr>";
-										}	
-									
-									}
-									?>
-                                        
-                                    </tbody>
-                                </table>
-								
-                            </div>
-                        </div>
-                    </div>
-                                        </div>
-                                </div>
+
 								<?php
 								
 								$rsql = "SELECT * FROM `roombook`";
@@ -187,6 +126,54 @@ if(!isset($_SESSION["user"]))
 								}
 						
 								?>
+                                <div class="panel panel-warning">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+												 Booked Rooms  <span class="badge"><?php echo $r ; ?></span>
+
+                                        </h4>
+                                    </div>
+                                    
+                                        <div class="panel-body">
+										<?php
+										$msql = "SELECT * FROM `roombook`";
+										$mre = mysqli_query($con,$msql);
+										
+										while($mrow=mysqli_fetch_array($mre) )
+										{		
+											$br = $mrow['stat'];
+											if($br=="Confirm")
+											{
+												$fid = $mrow['id'];
+												 
+											echo"<div class='col-md-3 col-sm-12 col-xs-12'>
+													<div class='panel panel-primary text-center no-boder bg-color-green'>
+														<div class='panel-body'>
+															<i class='fa fa-users fa-5x'></i>
+															<h3>".$mrow['FName']."</h3>
+														</div>
+														<div class='panel-footer back-footer-green'>
+														<a href=show.php?sid=".$fid ."><button  class='btn btn-success btn' data-toggle='modal' data-target='#myModal'>
+													Show
+													</button></a>
+															".$mrow['TRoom']."
+														</div>
+													</div>	
+											</div>";
+															
+												
+					
+				
+												
+											}
+											
+									
+										}
+										?>
+                                           
+										</div>
+									
+                                </div>
 
                                 </div>
                             </div>
